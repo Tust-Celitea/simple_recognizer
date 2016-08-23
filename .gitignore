@@ -90,3 +90,6 @@ ENV/
 
 # face++ configuration file 
 faceplus/apikey.cfg
+
+# default storage dir
+storage/
