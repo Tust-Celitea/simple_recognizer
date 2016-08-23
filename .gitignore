@@ -88,8 +88,8 @@ ENV/
 # Rope project settings
 .ropeproject
 
-# face++ configuration file 
-faceplus/apikey.cfg
+# face++ configuration file
+faceplus*/
 
 # default storage dir
 storage/
