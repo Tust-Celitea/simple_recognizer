@@ -91,5 +91,8 @@ ENV/
 # face++ configuration file
 faceplus*/
 
+# configuration file.
+config.py
+
 # default storage dir
 storage/

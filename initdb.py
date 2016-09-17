@@ -8,8 +8,9 @@ conn.execute("""CREATE TABLE users (
                 id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
                 name TEXT NOT NULL,
                 username TEXT NOT NULL,
-                face_id INTEGER NOT NULL)""" )
+                person_id INTEGER NOT NULL)""" )
 conn.execute("""CREATE TABLE photos (
                 id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE NOT NULL,
-                user INTEGER NOT NULL,
-                filename TEXT NOT NULL)""")
+                user_id INTEGER NOT NULL,
+                filename TEXT NOT NULL,
+                FOREIGN KEY (user_id) REFERENCES users)""")
