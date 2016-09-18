@@ -32,7 +32,8 @@ def create_person(face,username):
     '''
     try:
         person=api.person.create(person_name = username, face_id = face['face'][0]['face_id'])
-        api.train.identify(person_name = username)
+        api.group.add_person(group_name = 'users', person_name =username)
+        api.train.verify(person_name = username)
     except APIError as err:
         print("Face++ API Exception:{}".format(str(err)))
         return None
@@ -49,11 +50,11 @@ def send_person(person,server=config.LOG_SERVER):
 
 if __name__=="__main__":
     image="http://cn.faceplusplus.com/static/resources/python_demo/1.jpg"
-    username="for_baz"
+    username="example"
     current_face=getface(image)
     print(current_face)
     current_person=create_person(current_face,username)
     print(current_person)
     send_person(current_person)
-    api.person.delete(person_name = username)
+    #api.person.delete(person_name = username)
 
